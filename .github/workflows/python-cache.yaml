@@ -1,4 +1,4 @@
-name: Pythons with Namespace Caching
+name: Python with Namespace Caching
 on: [push, workflow_dispatch]
 
 permissions:
