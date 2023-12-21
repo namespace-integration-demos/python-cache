@@ -1,0 +1,50 @@
+name: Pythons with Namespace Caching
+on: [push, workflow_dispatch]
+
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read # This is required for actions/checkout
+
+jobs:
+  without-cache:
+    runs-on:
+      - namespace-profile-default
+    name: Build without Cache
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      
+      - name: Python install with venv
+        run: |
+          python3 -m venv .venv
+          .venv/bin/activate; pip3 install -r requirements.txt
+          
+
+  namespace-cache:
+    runs-on:
+      # Replace with your profile label https://namespace.so/docs/features/faster-github-actions#using-runner-profiles
+      - namespace-profile-amd64-with-caching
+    name: Build with Namespace Caching
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          
+      - name: Setup cross-invocation caching
+        uses: namespacelabs/nscloud-cache-action@v1
+        with:
+          cache: python
+
+      - name: Python install with venv
+        run: |
+          python3 -m venv .venv
+          .venv/bin/activate; pip3 install -r requirements.txt
