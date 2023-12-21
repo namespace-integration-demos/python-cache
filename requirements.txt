@@ -6,9 +6,6 @@ apispec==5.1.1
 aws-sam-translator==1.15.1
 awscli==1.22.90
 awscrt==0.13.14
-boto==2.49.0
-boto3==1.26.121
-botocore==1.31.2
 cbor2==5.2.0
 dnslib==0.9.10
 dnspython==1.16.0
