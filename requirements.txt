@@ -6,8 +6,6 @@ apispec==5.1.1
 aws-sam-translator> =1.15.1
 awscli>=1.22.90
 awscrt>=0.13.14
-cbor2==5.2.0
-dnslib==0.9.10
 dnspython==1.16.0
 flask==2.3.2
 flask-cors==3.0.3
@@ -30,7 +28,6 @@ cachetools==5.0.0
 cryptography
 dnspython==1.16.0
 plux==1.3.1
-psutil==5.4.8
 python-dotenv==0.19.1
 pyyaml>=5.1
 rich==12.3.0
