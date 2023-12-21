@@ -35,7 +35,7 @@ psutil==5.4.8
 python-dotenv==0.19.1
 pyyaml==5.1
 rich==12.3.0
-requests==2.26.0
+requests==2.28.1
 semver==2.10
 stevedore==3.4.0
 coverage[toml]==5.5
