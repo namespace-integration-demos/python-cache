@@ -22,7 +22,7 @@ jobs:
       - name: Python install with venv
         run: |
           python3 -m venv .venv
-          .venv/bin/activate; pip3 install -r requirements.txt
+          source .venv/bin/activate; pip3 install -r requirements.txt
           
 
   namespace-cache:
@@ -47,7 +47,7 @@ jobs:
       - name: Python install with venv
         run: |
           python3 -m venv .venv
-          .venv/bin/activate; pip3 install -r requirements.txt
+          source .venv/bin/activate; pip3 install -r requirements.txt
 
       - name: Breakpoint on failure
         if: failure()
